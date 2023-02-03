@@ -86,8 +86,12 @@ Create a new namespaces and deploy the application in the dedicated namespace
 kubectl apply -f bookinfo-split/bookinfo-rating.yaml
 ```
 
+![](./docs/assets/booking-kiali-ex-namespace-1.png)
+
 Apply the new routing strategy
 
 ```
 kubectl apply -f ./bookinfo-routing/virtual-service-all-v2.yaml
 ```
+
+![](./docs/assets/booking-kiali-ex-namespace-2.png)
