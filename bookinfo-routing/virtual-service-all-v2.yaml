@@ -3,8 +3,9 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: ratings
+  namespace: booking-rating
 spec:
-  host: ratings.booking-rating.svc.cluster.local
+  host: ratings
   subsets:
     - name: v1
       labels:
@@ -21,12 +22,7 @@ spec:
     - route:
         - destination:
             host: reviews
-            subset: v2
-          weight: 75
-        - destination:
-            host: reviews
             subset: v3
-          weight: 25
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService

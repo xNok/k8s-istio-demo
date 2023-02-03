@@ -80,8 +80,14 @@ kubectl apply -f ./bookinfo-routing/virtual-service-all-v1.yaml
 
 Now all the apps a are in the default namespace. What if you application grows an you end up with several application, then decide to migrate one of the application outside the original namespace.
 
-Create a new namespaces, one for each applications
+Create a new namespaces and deploy the application in the dedicated namespace
 
 ```
 kubectl apply -f bookinfo-split/bookinfo-rating.yaml
+```
+
+Apply the new routing strategy
+
+```
+kubectl apply -f ./bookinfo-routing/virtual-service-all-v2.yaml
 ```
